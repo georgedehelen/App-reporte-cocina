@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form input, form select {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-left: 10px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+.navbar {
+    background-color: #343a40 !important; /* Cambia el fondo */
+}
+
+.navbar-brand, .nav-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Cambia el color al pasar el cursor */
+}
+.navbar {
+    background: linear-gradient(90deg, #007bff, #0056b3) !important; /* Fondo degradado */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.navbar-brand img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; /* Haz que el logo sea circular */
+}
+
+.nav-item {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    transition: all 0.3s ease-in-out; /* Animación suave al pasar el mouse */
+}
+
+.nav-item:hover {
+    color: #ffc107 !important; /* Cambia el color al pasar el mouse */
+    text-decoration: underline; /* Resalta con subrayado */
+}
+
+.nav-item.active {
+    color: #ffc107 !important; /* Colorea el enlace activo */
+    font-weight: bold; /* Aumenta el peso del texto para el enlace activo */
+}
+
+.table {
+    border-radius: 10px; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Evita bordes cortados */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5 !important; /* Resaltado al pasar el mouse */
+    cursor: pointer;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+button {
+    transition: all 0.2s ease-in-out; /* Suaviza animaciones */
+}
+
+button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
