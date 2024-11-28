@@ -22,6 +22,15 @@ const DailyReport = () => {
     const totalGain = totalSold * 0.4;
     const kitchenAmount = totalSold * 0.6;
 
+    // Calcular no vendidos por categoría
+    const platosNoVendidos = report
+        .filter((item) => item.category === 'Plato')
+        .reduce((acc, item) => acc + item.remaining, 0);
+
+    const panaderiaNoVendida = report
+        .filter((item) => item.category === 'Panadería')
+        .reduce((acc, item) => acc + item.remaining, 0);
+
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* Contenedor centrado */}
@@ -47,7 +56,16 @@ const DailyReport = () => {
                                 <td style={{ border: '1px solid #ccc', padding: '10px' }}>{item.category}</td>
                                 <td style={{ border: '1px solid #ccc', padding: '10px' }}>${item.price}</td>
                                 <td style={{ border: '1px solid #ccc', padding: '10px' }}>{item.initial}</td>
-                                <td style={{ border: '1px solid #ccc', padding: '10px' }}>{item.remaining}</td>
+                                <td
+                                    style={{
+                                        border: '1px solid #ccc',
+                                        padding: '10px',
+                                        color: item.remaining !== 0 ? 'red' : 'black', // Resaltar en rojo si es diferente de 0
+                                        fontWeight: item.remaining !== 0 ? 'bold' : 'normal', // Negrita si es rojo
+                                    }}
+                                >
+                                    {item.remaining}
+                                </td>
                                 <td style={{ border: '1px solid #ccc', padding: '10px' }}>${(item.sold * item.price).toFixed(2)}</td>
                             </tr>
                         ))}
@@ -72,6 +90,14 @@ const DailyReport = () => {
                         <i className="fas fa-money-bill-alt" style={{ marginRight: '10px', fontSize: '24px' }}></i>
                         <span>Monto a Entregar a la Cocina (60%): ${kitchenAmount.toFixed(2)}</span>
                     </div>
+
+                    {/* Nuevos datos de pérdidas */}
+                    <p style={{ color: 'red', fontWeight: 'bold' }}>
+                        Platos no vendidos: {platosNoVendidos}
+                    </p>
+                    <p style={{ color: 'red', fontWeight: 'bold' }}>
+                        Panadería sin vender: {panaderiaNoVendida}
+                    </p>
                 </div>
 
                 {/* Notas adicionales */}
